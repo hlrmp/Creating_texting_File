@@ -27,15 +27,16 @@ namespace Creating_texting_File
 
             string docPath =
             Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath,
-            FrmFileName.SetFileName)))
+
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath,FrmFileName.SetFileName +  ".txt")))
 
             {
                 outputFile.WriteLine(getInput);
                 Console.WriteLine(getInput);
-            }
 
-           
+                outputFile.Flush();
+                outputFile.Close();
+            }
         }
     }
 }

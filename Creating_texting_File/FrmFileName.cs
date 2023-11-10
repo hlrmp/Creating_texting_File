@@ -16,10 +16,14 @@ namespace Creating_texting_File
         {
             InitializeComponent();
         }
+
         public static string SetFileName;
+
         private void btnOkay_Click(object sender, EventArgs e)
         {
+
           SetFileName = txtFileName.Text;
+            
             Close();
 
             FrmRegistration fr = new FrmRegistration();

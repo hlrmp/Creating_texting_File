@@ -61,10 +61,9 @@ namespace Creating_texting_File
         public void writer()
         {
 
+            string filename = txtstudentno.Text;  // for new file name for the registration form
 
-
-            string docPath =
-            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+           
 
                 string sn = "Student No : 0000" + txtstudentno.Text;
                 string name = "Full Name :" + txtfname.Text + ", " + txtmname.Text + " " + txtlanme.Text;
@@ -75,23 +74,27 @@ namespace Creating_texting_File
                 string contact = "contact No :" + txtcontactno.Text;
 
 
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-                StreamWriter sw = new StreamWriter(Path.Combine(docPath, FrmFileName.SetFileName));
+                using (StreamWriter sw = new StreamWriter(Path.Combine(docPath, filename + ".txt")))
+            {
+                        sw.WriteLine(" ");
+                        sw.WriteLine(sn);
+                        sw.WriteLine(name);
+                        sw.WriteLine(program);
+                        sw.WriteLine(Gender);
+                        sw.WriteLine(age);
+                        sw.WriteLine(birthday);
+                        sw.WriteLine(contact);
 
-                sw.WriteLine(" ");
-                sw.WriteLine(sn);
-                sw.WriteLine(name);
-                sw.WriteLine(program);
-                sw.WriteLine(Gender);
-                sw.WriteLine(age);
-                sw.WriteLine(birthday);
-                sw.WriteLine(contact);
+                        sw.Flush();
+                        sw.Close();
 
-                sw.Flush();
+               
+            }
 
 
-
-            MessageBox.Show("Succesfully Registered" , " Thank you ", MessageBoxButtons.OK);
+        MessageBox.Show("Succesfully Registered" , " Thank you ", MessageBoxButtons.OK);
 
 
         }
