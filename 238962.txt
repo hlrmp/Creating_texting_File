@@ -1,0 +1,8 @@
+ 
+Student No : 0000238962
+Full Name :Danilo, M De Guzman
+Program : BS Information Technology
+Gender : Male
+Age : 21
+Birthday : Friday, June 14, 2002
+contact No :09951868060
